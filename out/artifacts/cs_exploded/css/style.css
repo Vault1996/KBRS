@@ -1,0 +1,109 @@
+.login-form {
+    box-shadow: 0 0 10px gray;
+    border-radius: 5px;
+    display: block;
+    width: 400px;
+    padding: 20px 40px;
+    margin: 10px auto;
+    transform: translateY(10%);
+}
+.login-form > {
+    margin: 5px 0;
+}
+.compulsory::after {
+    content: "*";
+    color: green;
+}
+.error {
+    font-style: italic;
+    color: red;
+}
+.status {
+    font-style: italic;
+    color: green;
+}
+body {
+    background-image: url("../images/background/background.png");
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #3c3c3c;
+
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+img.mini {
+    width: 100%;
+    margin: 5px;
+}
+.pagination {
+    margin: auto;
+    padding: auto;
+}
+html,
+body {
+    height: 100%;
+}
+.footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: 100px;
+    height: 230px;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+img.main {
+    float: left;
+    margin:0 10px 20px 0;
+    width: 300px;
+}
+textarea {
+    resize: none;
+}
+/*--------------------------*/
+.navbar {
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+.row.content {height: 100%}
+
+/* Set gray background color and 100% height */
+.sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+/* Set black background color, white text and some padding */
+footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* On small screens, set height to 'auto' for sidenav and grid */
+@media screen and (max-width: 767px) {
+    .sidenav {
+        height: auto;
+        padding: 15px;
+    }
+    .row.content {height:auto;}
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    height: 450px;
+    margin: auto;
+}

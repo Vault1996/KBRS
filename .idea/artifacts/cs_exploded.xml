@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="cs exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/cs_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="cs" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-codec-1.10" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="cs/web/Web" />
+    </root>
+  </artifact>
+</component>

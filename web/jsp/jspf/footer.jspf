@@ -1,0 +1,13 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: User
+  Date: 25.08.2016
+  Time: 16:33
+  To change this template use File | Settings | File Templates.
+--%>
+<footer class="container-fluid text-center">
+    <div>
+        <p><fmt:message key="footer.contactInfo" bundle="${ rb }" /></p>
+    </div>
+    <p><fmt:message key="label.email" bundle="${ rb }" />: cinema@gmail.com</p>
+</footer>

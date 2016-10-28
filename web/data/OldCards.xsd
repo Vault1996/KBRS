@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/OldCards"
+        xmlns:tns="http://www.example.com/OldCards"
+        elementFormDefault="qualified"
+>
+    <element name="oldCard" type="tns:OldCard" abstract="true"/>
+    <element name="postCard" type="tns:PostCard" substitutionGroup="tns:oldCard"/>
+    <element name="soundCard" type="tns:SoundCard" substitutionGroup="tns:oldCard"/>
+
+    <element name="oldCards">
+        <complexType>
+            <sequence>
+                <element ref="tns:oldCard" minOccurs="1" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <!-- Базовый класс -->
+    <complexType name="OldCard">
+        <sequence>
+            <element name="Thema" type="tns:thema"/>
+            <element name="Type" type="tns:type"/>
+            <element name="Country" type="tns:country"/>
+            <element name="Year" type="tns:year"/>
+            <element name="Valuable" type="boolean"/>
+        </sequence>
+        <!-- Атрибут уникальный ID -->
+        <attribute name="Id" type="tns:id" use="required"/>
+        <attribute name="Author" type="string" use="optional" default="None"/>
+    </complexType>
+    <!-- Postcard -->
+    <complexType name="PostCard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <sequence>
+                    <element name="Message" type="string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <!-- SoundCard -->
+    <complexType name="SoundCard">
+        <complexContent>
+            <extension base="tns:OldCard">
+                <sequence>
+                    <element name="Song" type="string"/>
+                    <element name="Format" type="tns:format"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+<!-- Типы данных -->
+    <simpleType name="thema">
+        <restriction base="string">
+            <enumeration value="Landscape"/>
+            <enumeration value="Nature"/>
+            <enumeration value="People"/>
+            <enumeration value="Religion"/>
+            <enumeration value="Sport"/>
+            <enumeration value="Architecture"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="type">
+        <restriction base="string">
+            <enumeration value="Celebration"/>
+            <enumeration value="Adv"/>
+            <enumeration value="Usual"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="country">
+        <restriction base="string">
+            <enumeration value="Russia"/>
+            <enumeration value="Belarus"/>
+            <enumeration value="Great Britain"/>
+            <enumeration value="Ukraine"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="year">
+        <restriction base="gYear">
+            <minInclusive value="1000"/>
+            <maxExclusive value="2016"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="id">
+        <restriction base="ID">
+            <pattern value="ID_(\d){1,12}"/>
+        </restriction>
+    </simpleType>
+    <simpleType name="format">
+        <restriction base="string">
+            <enumeration value="mp3"/>
+            <enumeration value="wav"/>
+        </restriction>
+    </simpleType>
+<!-- ======================== -->
+</schema>

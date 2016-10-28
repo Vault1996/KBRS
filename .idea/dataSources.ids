@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - cinema@localhost" uuid="6c5b5ea0-ec43-4aa1-8208-ede81e201cd7">
+    <database-info product="MySQL" version="5.7.13-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="cinema"/>
+      <table id="2" parent="1" name="access"/>
+      <table id="3" parent="1" name="ban"/>
+      <table id="4" parent="1" name="ban_message"/>
+      <table id="5" parent="1" name="movie"/>
+      <table id="6" parent="1" name="rating"/>
+      <table id="7" parent="1" name="review"/>
+      <table id="8" parent="1" name="token"/>
+      <table id="9" parent="1" name="user"/>
+      <column id="10" parent="2" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="11" parent="2" name="movie_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="12" parent="2" name="access">
+        <mandatory>1</mandatory>
+        <data-type>varchar(2)</data-type>
+      </column>
+      <index id="13" parent="2" name="TO_MOVIE_idx">
+        <columns>movie_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="14" parent="2" name="PRIMARY">
+        <columns>user_id
+movie_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="15" parent="2" name="TO_MOVIE">
+        <columns>movie_id</columns>
+        <ref-key>~.movie.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="16" parent="2" name="TO_USER">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="17" parent="3" name="ban_id">
+        <comment>ban identificator</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="18" parent="3" name="user_id">
+        <comment>user id, that have a ban</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="19" parent="3" name="till">
+        <comment>end of ban</comment>
+        <data-type>timestamp</data-type>
+      </column>
+      <column id="20" parent="3" name="reason">
+        <comment>reason of ban</comment>
+        <data-type>varchar(255)</data-type>
+      </column>
+      <index id="21" parent="3" name="fk_ban_user_idx">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <index id="22" parent="3" name="unique_user_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <key id="23" parent="3" name="PRIMARY">
+        <columns>ban_id</columns>
+        <primary>1</primary>
+      </key>
+      <key id="24" parent="3" name="unique_user_id">
+        <columns>user_id</columns>
+        <underlying-index>unique_user_id</underlying-index>
+      </key>
+      <foreign-key id="25" parent="3" name="fk_ban_user1">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="26" parent="4" name="ban_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="27" parent="4" name="message">
+        <mandatory>1</mandatory>
+        <data-type>varchar(512)</data-type>
+      </column>
+      <key id="28" parent="4" name="PRIMARY">
+        <columns>ban_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="29" parent="4" name="ban">
+        <columns>ban_id</columns>
+        <ref-key>~.ban.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="30" parent="5" name="movie_id">
+        <comment>movie identificator</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="31" parent="5" name="name">
+        <comment>movie name</comment>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="32" parent="5" name="year">
+        <comment>year of production</comment>
+        <data-type>mediumint(9)</data-type>
+      </column>
+      <column id="33" parent="5" name="description">
+        <comment>movie description</comment>
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="34" parent="5" name="country">
+        <comment>production country</comment>
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="35" parent="5" name="rating">
+        <comment>average rating of every user</comment>
+        <data-type>decimal(3,1)</data-type>
+      </column>
+      <column id="36" parent="5" name="poster">
+        <comment>poster to the movie</comment>
+        <data-type>varchar(256)</data-type>
+      </column>
+      <index id="37" parent="5" name="name_INDEX">
+        <columns>name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="38" parent="5" name="PRIMARY">
+        <columns>movie_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="39" parent="6" name="movie_id">
+        <comment>rated movie</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="40" parent="6" name="user_id">
+        <comment>used that rated the movie</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="41" parent="6" name="rating">
+        <comment>rating for the film from user</comment>
+        <data-type>tinyint(4)</data-type>
+      </column>
+      <column id="42" parent="6" name="time">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="43" parent="6" name="USER_id">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="44" parent="6" name="PRIMARY">
+        <columns>movie_id
+user_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="45" parent="6" name="MOVIE_id">
+        <columns>movie_id</columns>
+        <ref-key>~.movie.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="46" parent="6" name="USER_id">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="47" parent="7" name="movie_id">
+        <comment>reviewed movie</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="48" parent="7" name="user_id">
+        <comment>used that reviewed the movie</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="49" parent="7" name="review">
+        <comment>review to the film from user</comment>
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="50" parent="7" name="time">
+        <data-type>timestamp</data-type>
+      </column>
+      <index id="51" parent="7" name="USER_id0">
+        <columns>user_id</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="52" parent="7" name="PRIMARY">
+        <columns>movie_id
+user_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="53" parent="7" name="MOVIE_id0">
+        <columns>movie_id</columns>
+        <ref-key>~.movie.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <foreign-key id="54" parent="7" name="USER_id0">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="55" parent="8" name="user_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="56" parent="8" name="token">
+        <mandatory>1</mandatory>
+        <data-type>varchar(64)</data-type>
+      </column>
+      <key id="57" parent="8" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="58" parent="8" name="USER_FK">
+        <columns>user_id</columns>
+        <ref-key>~.user.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="59" parent="9" name="user_id">
+        <comment>user identificator</comment>
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <sequence-identity>1</sequence-identity>
+      </column>
+      <column id="60" parent="9" name="login">
+        <comment>user login</comment>
+        <mandatory>1</mandatory>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="61" parent="9" name="password">
+        <comment>user hashed password</comment>
+        <mandatory>1</mandatory>
+        <data-type>char(64)</data-type>
+      </column>
+      <column id="62" parent="9" name="pin">
+        <mandatory>1</mandatory>
+        <data-type>char(64)</data-type>
+      </column>
+      <column id="63" parent="9" name="email">
+        <comment>user email</comment>
+        <data-type>varchar(40)</data-type>
+      </column>
+      <column id="64" parent="9" name="create_date">
+        <comment>date of registration</comment>
+        <data-type>date</data-type>
+      </column>
+      <column id="65" parent="9" name="name">
+        <comment>user name</comment>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="66" parent="9" name="surname">
+        <comment>user surname</comment>
+        <data-type>varchar(30)</data-type>
+      </column>
+      <column id="67" parent="9" name="role">
+        <comment>role of user in system</comment>
+        <mandatory>1</mandatory>
+        <data-type>enum(&apos;ADMIN&apos;, &apos;USER&apos;)</data-type>
+      </column>
+      <column id="68" parent="9" name="status">
+        <comment>user status</comment>
+        <data-type>mediumint(9)</data-type>
+      </column>
+      <column id="69" parent="9" name="photo">
+        <comment>user photo</comment>
+        <data-type>varchar(256)</data-type>
+      </column>
+      <index id="70" parent="9" name="email_UNIQUE">
+        <columns>email</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="71" parent="9" name="login_UNIQUE">
+        <columns>login</columns>
+        <desc-columns></desc-columns>
+        <unique>1</unique>
+      </index>
+      <index id="72" parent="9" name="name_INDEX">
+        <columns>surname
+name</columns>
+        <desc-columns></desc-columns>
+      </index>
+      <key id="73" parent="9" name="email_UNIQUE">
+        <columns>email</columns>
+        <underlying-index>email_UNIQUE</underlying-index>
+      </key>
+      <key id="74" parent="9" name="login_UNIQUE">
+        <columns>login</columns>
+        <underlying-index>login_UNIQUE</underlying-index>
+      </key>
+      <key id="75" parent="9" name="PRIMARY">
+        <columns>user_id</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

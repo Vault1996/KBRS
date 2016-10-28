@@ -1,0 +1,56 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: User
+  Date: 25.08.2016
+  Time: 16:40
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ taglib prefix="ctg" uri="/WEB-INF/tld/custom.tld" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/controller?command=show_main_page">CinemaRating</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><fmt:message key="button.movies" bundle="${ rb }" />
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <ctg:not-guest>
+                            <li><a href="${pageContext.request.contextPath}/controller?command=show_my_movies"><fmt:message key="button.myMovies" bundle="${ rb }" /></a></li>
+                        </ctg:not-guest>
+                        <li><a href="${pageContext.request.contextPath}/controller?command=all_movies&sortBy=name"><fmt:message key="button.allMovies" bundle="${ rb }" /></a></li>
+                        <li><a href="${pageContext.request.contextPath}/controller?command=all_movies&sortBy=rating"><fmt:message key="button.topMovies" bundle="${ rb }" /></a></li>
+                    </ul>
+                </li>
+                <li><a href="${pageContext.request.contextPath}/controller?command=all_users"><fmt:message key="button.users" bundle="${ rb }" /></a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <ctg:not-guest>
+                    <li><a href="${pageContext.request.contextPath}/controller?command=show_user&user_id=${activeUser.userId}"><ctg:role-login user="${activeUser}"/></a></li>
+                    <li><a href="${pageContext.request.contextPath}/controller?command=logout"><span class="glyphicon glyphicon-log-out"></span><fmt:message key="button.logout" bundle="${ rb }" /></a></li>
+                </ctg:not-guest>
+                <c:if test="${empty activeUser or empty activeUser.role or activeUser.role.toString() eq 'GUEST'}">
+                    <li><a href="${pageContext.request.contextPath}/controller?command=redirect&next=path.page.login"><span class="glyphicon glyphicon-log-in"></span><fmt:message key="button.login" bundle="${ rb }" /></a></li>
+                </c:if>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><fmt:message key="button.language" bundle="${ rb }" />
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="${pageContext.request.contextPath}/controller?command=change_language&language=en_en">English</a></li>
+                        <li><a href="${pageContext.request.contextPath}/controller?command=change_language&language=ru_ru">Русский</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

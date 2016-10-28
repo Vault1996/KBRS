@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<oldCards xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://www.example.com/OldCards"
+          xsi:schemaLocation="http://www.example.com/OldCards OldCards.xsd">
+
+    <postCard Id="ID_123">
+        <Thema>Architecture</Thema>
+        <Type>Usual</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <postCard Id="ID_323" Author="Arthur">
+        <Thema>Landscape</Thema>
+        <Type>Usual</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <soundCard Id="ID_231">
+        <Thema>Nature</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>wav</Format>
+    </soundCard>
+    <soundCard Author="Liza" Id="ID_251">
+        <Thema>People</Thema>
+        <Type>Celebration</Type>
+        <Country>Russia</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>mp3</Format>
+    </soundCard>
+    <postCard Id="ID_1124">
+        <Thema>Religion</Thema>
+        <Type>Adv</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <postCard Id="ID_13213" Author="Arthur">
+        <Thema>Sport</Thema>
+        <Type>Usual</Type>
+        <Country>Ukraine</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <soundCard Id="ID_9991">
+        <Thema>Architecture</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>1456</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>mp3</Format>
+    </soundCard>
+    <soundCard Author="Liza" Id="ID_823">
+        <Thema>Architecture</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>wav</Format>
+    </soundCard>
+    <postCard Id="ID_12333">
+        <Thema>Architecture</Thema>
+        <Type>Usual</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <postCard Id="ID_523" Author="Arthur">
+        <Thema>Architecture</Thema>
+        <Type>Usual</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <soundCard Id="ID_715">
+        <Thema>Architecture</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>mp3</Format>
+    </soundCard>
+    <soundCard Author="Liza" Id="ID_345">
+        <Thema>Architecture</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>mp3</Format>
+    </soundCard>
+    <postCard Id="ID_123143">
+        <Thema>Architecture</Thema>
+        <Type>Usual</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <postCard Id="ID_18484" Author="Arthur">
+        <Thema>Architecture</Thema>
+        <Type>Usual</Type>
+        <Country>Belarus</Country>
+        <Year>1023</Year>
+        <Valuable>true</Valuable>
+        <Message>Hello world!</Message>
+    </postCard>
+    <soundCard Id="ID_9123">
+        <Thema>Architecture</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>mp3</Format>
+    </soundCard>
+    <soundCard Author="Liza" Id="ID_8800">
+        <Thema>Architecture</Thema>
+        <Type>Celebration</Type>
+        <Country>Great Britain</Country>
+        <Year>2012</Year>
+        <Valuable>true</Valuable>
+        <Song>Hello</Song>
+        <Format>mp3</Format>
+    </soundCard>
+
+</oldCards>
